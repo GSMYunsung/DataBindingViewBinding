@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="testData"
+            type="com.example.databindingviewbinding.MainActivity.ObservableUser" />
+        <variable
+            name="user"
+            type="com.example.databindingviewbinding.User" />
+    </data>
+
+    <RelativeLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <EditText
+            android:id="@+id/edit_edit"
+            android:layout_margin="20dp"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:onClick="@{() -> testData.onclickSetValue()}"
+            android:layout_alignTop="@id/edit_edit"
+            android:layout_toRightOf="@id/edit_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:id="@+id/name_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{user.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/callnumber_text"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/name_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{user.callnumber}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/age_text"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/callnumber_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{Integer.toString(user.age)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_below="@id/name_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:id="@+id/change_name_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{testData.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/change_callnumber_text"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/change_name_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{testData.callnumber}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/change_age_text"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/change_callnumber_text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="@{Integer.toString(testData.age)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</layout>

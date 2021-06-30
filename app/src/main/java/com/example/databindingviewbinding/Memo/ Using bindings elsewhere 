@@ -1,0 +1,8 @@
+
+Fragment, listView, RecyclerView 에서 Binding 사용하기
+
+binding = FragmentBinding.inflate (inflater, container, false)
+// XML 파일 지정하지 않고 사용하기
+
+binding = DataBindingUtil.inflate (inflater, R.layout.fragment_test, container, false);
+// XML 파일 지정하고 사용하기
