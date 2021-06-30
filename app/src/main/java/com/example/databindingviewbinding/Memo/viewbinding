@@ -1,0 +1,38 @@
+
+
+##view binding
+
+    layout 과의 상호작용하는 코드를 더욱쉽게!
+    xml 파일의 각뷰의 id값!
+
+     layout Component -> 코드 (골칫거리) x
+
+     binding 을 이용 바로사용하자! O
+
+     View Binding 모듈별로 설정, 각 xml 파일에대해 binding class 자동생성
+
+     Binding Class 의 인스턴스는 ID를 가지고있는 모든뷰의 직접적 참조!!
+     즉, findView는 쓰지않아도 된다는소리!!!
+
+     (findView의 문제점들을 고친 View Binding!)
+     null safety - 뷰 직접 참조로 없는 아이디로 널포인트 익셉션 발생 안함.
+     type safety - 뷰 타입이 일치함으로 Class Cast Exception 발생 안함.
+
+     ------------------------
+
+     android {
+         ...
+         buildFeatures {
+             viewBinding true
+         }
+     }
+
+     ------------------------
+
+     ### 특징!
+
+    1. viewBinding은 빌드 과정에서 생성된다.
+    2. 끝에 Binding이란 단어가 붙는다.
+    3. 카멜 표기법에 따라 네이밍이 된다.
+    4. ID가 존재하지 않는 뷰에 대해선 클래스에 참조가 존재하지 않는다.
+    5. getRoot()메서드가 자동 포함 된다. layout file의 루트 뷰에 관한 직접 참고 제공.
